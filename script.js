@@ -42,3 +42,16 @@ function desencriptar(stringDesencriptada){
 
     return stringDesencriptada;
 }
+
+
+document.getElementById("botonCopiar").onclick = function() {
+    var text = document.getElementById("texto").value;
+ 
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        console.log('Text copied to clipboard');
+    })
+    .catch(err => {
+        console.error('Error in copying text: ', err);
+    });
+} 
